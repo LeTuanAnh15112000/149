@@ -436,11 +436,20 @@ Contents
   max-width: 220px;
 }
 
+.btn_primary.center {
+  margin: 0 auto;
+}
+
+.btn_primary.white a {
+  color: #fff;
+}
+
 .btn_primary a {
   display: flex;
+  font-family: var(--en-font);
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   line-height: 3.5;
   position: relative;
   overflow: hidden;
@@ -480,10 +489,16 @@ Contents
 .btn_primary a span::before,
 .btn_primary a span::after {
   content: "";
-  background: url("../images/common/icon_arrow.png") no-repeat;
+  background-repeat: no-repeat;
+  background-image: url("../images/common/icon_arrow.png");
   background-size: 100% auto;
   width: 41px;
   height: 15px;
+}
+
+.btn_primary.white a span::before,
+.btn_primary.white a span::after {
+  background-image: url("../images/common/icon_arrow_white.png");
 }
 
 .btn_primary a span::before {

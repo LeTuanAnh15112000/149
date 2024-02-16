@@ -45,3 +45,58 @@ function mvheight() {
     false
   );
 }
+
+$(window).on("scroll load resize", function () {
+  servicescroll();
+});
+
+function servicescroll() {
+  var scr = $(window).scrollTop();
+  var parent = $('#idx_service .inner');
+  var tgt = $("#idx_service .service_frame");
+  var t_h = tgt.innerHeight();
+  var p_h = parent.innerHeight();
+  var p_o = parent.offset().top;
+  if ($(window).width() > 768) {
+    if (scr - p_o + 80 < 0) {
+      tgt.removeClass("s_frame_fixed bottom");
+    } else if (scr - p_o - p_h + t_h + 80 > 0) {
+      tgt.removeClass("s_frame_fixed").addClass("bottom");
+    } else {
+      tgt.removeClass("bottom").addClass("s_frame_fixed");
+    }
+  }
+}
+
+const getCateList = document.querySelector(".collection_cate_list");
+const getCateImg = document.querySelector(".collection_cate_img");
+const heightCateList = getCateList.clientHeight;
+const heightCateImg = getCateImg.clientHeight;
+const resultEndPin = heightCateList - heightCateImg;
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.create({
+  trigger: ".collection_cate_img",
+  pin: true,
+  start: "top 50px",
+  end: `${resultEndPin}px 50px`,
+  scrub: 1,
+});
+
+
+
+// $(".collection_cate_item a").hover(
+//   function (e) {
+//     var dataCateValue = $(this).data("cate");
+//     const arrImage = Array.from(
+//       document.querySelectorAll(".collection_cate_img figure")
+//     );
+//     arrImage.forEach(img => {
+//       img.classList.remove("show");
+//     })
+//     const resultImg = arrImage.filter((img) => {
+//       return img.getAttribute("data-id") == dataCateValue;
+//     });
+//     resultImg[0].classList.add("show");
+//   }
+// );
