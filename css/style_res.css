@@ -1,0 +1,134 @@
+.box_sp {
+    display: none;
+}
+
+.box_pc {
+    display: block;
+}
+
+/* responsive */
+@media screen and (max-width: 1500px) {
+}
+
+@media screen and (max-width: 1150px) {
+}
+
+@media screen and (min-width: 1025px) {
+    a[href^="tel"] {
+        pointer-events: none;
+    }
+
+    /*-- btn_primary --*/
+    .btn_primary a:hover::before {
+        transform: scaleX(0) translateZ(0);
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .btn_primary a:hover span {
+        transform: translateX(4.2rem) translateZ(0);
+    }
+
+    .btn_primary a:hover::after {
+        transform: scaleX(1) translateZ(0);
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+
+    /*-- btn_primary --*/
+    .btn_primary a {
+        font-size: 14px;
+        line-height: 3;
+    }
+
+    /*-- idx_about --*/
+    #idx_about {
+        padding: 60px 0 12vw;
+    }
+
+    #idx_about .about_content {
+        padding: 12vw 4vw 0 4vw;
+    }
+
+    #idx_about .about_title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #idx_about .about_desc {
+        font-size: 14px;
+    }
+
+    #idx_about .about_wrap::before {
+        background-size: 1233px 100%;
+        height: 70px;
+        animation-name: TitleRight-01;
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+    #wrapper,
+    #header,
+    #main,
+    #footer,
+    .pages .pages_inner {
+        width: 100% !important;
+        min-width: inherit !important;
+    }
+
+    .box_sp {
+        display: block;
+    }
+
+    .box_pc {
+        display: none;
+    }
+
+    /*-- idx_about --*/
+    #idx_about {
+        padding: 60px 0 55px;
+    }
+
+    #idx_about .about_wrap {
+        flex-direction: column-reverse;
+    }
+
+
+    #idx_about .about_content {
+        width: 100%;
+        padding: 15vw 3% 0;
+    }
+
+    #idx_about .about_title {
+        text-align: center;
+    }
+
+    #idx_about .about_content .btn_primary {
+        margin: 0 auto;
+    }
+
+
+    #idx_about .about_gallery {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+}
+
+@media screen and (max-width: 490px) {
+}
+
+@media screen and (max-width: 390px) {
+}
+
+@media screen and (max-width: 320px) {
+}

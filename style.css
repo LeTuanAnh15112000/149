@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+/*
+Theme Name: pluscloud
+Theme URI: http://www.plust.jp/
+Description: プラスクラウド
+Version: 1
+Author: plust
+Author URI: http://www.plust.jp/
+License: GNU General Public License
+License URI: license.txt
+Tags: Two-columns
+*/
+
+
+/* ----------------------------
+
+1. Body Style
+
+2. Header Style
+
+3. Footer Style
+
+4. Teaser Style
+
+5. Common Style
+5-1. common
+5-2. link Style
+5-3. h Style
+
+6. Sidebar Style
+
+7. Main Contents Style
+
+8. Top Style
+
+9. Page Style
+
+10. Archive Style
+
+11. Single Style
+11-1. single common
+11-2. Pagelink Style
+
+---------------------------- */
+
+
+
+
+/* 1. Body Style
+-------------------------------------------------------------------------------*/
+body {
+	font-family:Meiryo, 'メイリオ', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'ＭＳ ゴシック', sans-serif;
+	font-size:14px;
+	line-height:1.6em;
+}
+
+#wrap {
+	width:100%;
+	background-color:#FFF;
+}
+
+#main-wrap {
+	margin:0 auto;
+}
+
+
+
+/* 2. Header Style
+-------------------------------------------------------------------------------*/
+#main-header {
+	width:100%;	
+	background-color:#FFF;
+}
+
+#main-header .inner {
+	margin:0 auto;
+}
+
+#main-header .header-logo {
+	line-height:0;
+}
+
+#g-menu ul {
+	font-size:0;
+}
+#g-menu li {
+	display:inline-block;
+	position:relative;
+}
+
+#g-menu li a {
+	display:block;
+	line-height:2.5em;
+	border:1px solid #FFF;
+	font-size:14px;
+	text-align:center;
+	text-decoration:none;
+	color:#FFF;
+	background-color:#000;
+}
+
+
+
+
+
+
+/* 3. Footer Style
+-------------------------------------------------------------------------------*/
+#main-footer {
+	width:100%;
+	background-color:#000;
+	color:#FFF;
+	font-size:12px;
+}
+#main-footer a {
+	color:#FFF;
+}
+
+#main-footer .inner {
+	margin:0 auto;
+	padding:20px 0;
+}
+
+#main-footer .footer-logo {
+	float:left;
+	margin-right:25px;
+}
+
+#main-footer .footer-menu ul {
+	float:right;
+	margin-right:25px;
+	width:540px;
+}
+
+#main-footer .footer-menu li:before {
+	content:"\003e";
+	margin-right:5px;
+}
+
+#main-footer .footer-contact {
+	margin-top:15px;
+}
+
+#main-footer .copyright {
+	text-align:center;
+	padding:20px;
+}
+
+
+
+
+/* 4. Teaser Style
+-------------------------------------------------------------------------------*/
+
+/* 5. Common Style
+-------------------------------------------------------------------------------*/
+/* 5-1. common
+-------------------------------------------------------------------------------*/
+
+
+/* 5-2. link Style
+-------------------------------------------------------------------------------*/
+a:link {
+	
+}
+a:visited {
+	
+}
+a:hover {
+	
+}
+a:active {
+	
+}
+
+
+/* 5-3. h Style
+-------------------------------------------------------------------------------*/
+h1 {
+	font-weight:normal;
+	font-size:12px;
+}
+
+h2 {
+	font-size:16px;
+	margin-bottom:15px;
+	padding:5px 10px;
+	border-left:4px solid #000;
+	border-bottom:1px solid #000;
+}
+
+h3 {
+	font-size:14px;
+	margin-bottom:10px;
+	padding:0 10px;
+	border-left:4px solid #000;
+}
+
+
+
+
+
+
+/* 6. Sidebar Style
+-------------------------------------------------------------------------------*/
+#sidebar ul {
+	list-style:none;
+	margin-bottom:35px;
+}
+
+
+/* 7. Top Style
+-------------------------------------------------------------------------------*/
+.top-part {
+	margin-bottom:30px;
+}
+.top-part img {
+	vertical-align:top;
+}
+
+
+
+
+/* 8. Page Style
+-------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/* 9. Archive Style
+-------------------------------------------------------------------------------*/
+.post {
+	margin-bottom:25px;
+}
+
+.postinfo {
+	font-size:12px;
+}
+
+
+
+
+
+
+
+/* 10. Single Style
+-------------------------------------------------------------------------------*/
+/* 10-1. common
+-------------------------------------------------------------------------------*/
+.single article {
+	border-bottom:2px solid #000;
+	padding-bottom:30px;
+	margin-bottom:40px;
+}
+
+.single .article-date {
+	display:block;
+	margin-bottom:8px;
+}
+
+
+
+
+/* 10-2. Pagelink Style（前後の投稿へのリンク）
+-------------------------------------------------------------------------------*/
+.pagelink {
+	border-top:2px solid #000;
+	padding-top:15px;
+	margin-top:20px;
+}
+
+.pagelink a {
+	color:#000;
+	text-decoration:none;
+}
+.pagelink a:hover {
+	opacity:0.6;
+}
+
+.pageprev {
+	width:48%;
+	float:left;
+	text-align:left;
+}
+
+.pagenext {
+	width:48%;
+	float:right;
+	text-align:right;
+}
+
+
+
+
+
+

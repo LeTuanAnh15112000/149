@@ -1,0 +1,349 @@
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 10;
+    opacity: 1;
+    animation: 2s loading_hidden 0.2s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes loading_hidden {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*-------------header---------------*/
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    #toggle-menu {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 28px;
+        right: 60px;
+        z-index: 12;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        cursor: pointer;
+        pointer-events: auto;
+        .hamburger {
+            width: 100%;
+            height: 14px;
+            position: relative;
+            .bar {
+                display: block;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 1px;
+                background: #fff;
+                transition: all 0.3s ease-in-out;
+            }
+            .bar1 {
+                top: 0;
+            }
+            .bar2,
+            .bar3 {
+                top: 7px;
+            }
+            .bar3 {
+                right: 0;
+            }
+            .bar4 {
+                bottom: 0;
+            }
+            &.active {
+                .bar {
+                    left: 62%;
+                }
+                .bar1 {
+                    transform: translateX(-50%) rotate(45deg);
+                    transform-origin: 2%;
+                    width: 30px;
+                }
+                .bar2 {
+                    transform: translateX(-40px);
+                    background-color: transparent;
+                }
+                .bar3 {
+                    transform: translateX(40px);
+                    background-color: transparent;
+                }
+                .bar4 {
+                    transform: translateX(-50%) rotate(-45deg);
+                    transform-origin: 4%;
+                    width: 30px;
+                }
+            }
+        }
+    }
+    .menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        pointer-events: none;
+        padding: 111px 60px 0 0;
+        z-index: 11;
+        &_item {
+            text-align: right;
+            pointer-events: auto;
+            margin-bottom: 12.5px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                font-family: var(--en-font);
+                color: var(--white-color);
+            }
+        }
+    }
+}
+
+/*-------------idx_mainvisual---------------*/
+#idx_mainvisual {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    .mainvisual {
+        &_contain {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                pointer-events: none;
+                z-index: 2;
+            }
+        }
+        &_slider {
+            width: 50%;
+            height: 100%;
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+                .swiper-slide {
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .swiper-slide-prev,
+                .swiper-slide-active,
+                .swiper-slide-duplicate-active {
+                    img {
+                        animation: zoomin 13s linear infinite;
+                    }
+                }
+            }
+            &.mv_right {
+                .swiper-wrapper {
+                    .swiper-slide-prev,
+                    .swiper-slide-active,
+                    .swiper-slide-duplicate-active {
+                        img {
+                            animation: zoomout 13s linear infinite;
+                        }
+                    }
+                }
+            }
+        }
+        &_title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            width: 100%;
+            max-width: 344px;
+            line-height: 0;
+        }
+        &_subtitle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(calc(-50%));
+            width: 100vw;
+            max-width: 1500px;
+            z-index: 3;
+            opacity: 0;
+            transition: all 1s ease;
+            margin-left: 80px;
+            &.left {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// zoom slider
+@keyframes zoomout {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/*-------------idx_about---------------*/
+#idx_about {
+    padding: 130px 0 300px;
+    .inner {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about {
+        &_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                background: url("../images/top/about_text.png") repeat-x;
+                background-size: 2237px 100%;
+                width: 100vw;
+                height: 127px;
+                left: 0;
+                top: 51px;
+                z-index: 9;
+                transition: all 1s linear;
+                animation: TitleRight 60s linear infinite;
+                pointer-events: none;
+                z-index: -1;
+            }
+        }
+    
+    
+        &_content {
+            width: 47.333vw;
+            padding: 16.8vw 5.3vw 0 6.6vw;
+        }
+    
+    
+        &_title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+    
+        &_desc {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 2.375;
+            margin-bottom: 41px;
+        }
+    
+        &_gallery {
+            width: 52.667vw;
+            position: relative;
+            figure {
+                line-height: 0;
+                &:not(:first-child) {
+                    position: absolute;
+                    z-index: 1;
+                }
+                &:nth-child(1) {
+                    width: 35.333vw; 530
+                    margin-left: 7.3vw;
+                }
+                &:nth-child(2) {
+                    width: 21.333vw;
+                    bottom: -6.6vw; 320
+                }
+                &:nth-child(3) {
+                    width: 16.667vw; 250
+                    bottom: -10.1vw;
+                    right: 5.9vw;
+                }   
+                &:nth-child(4) {
+                    width: 16.667vw; 250
+                    right: 0;
+                    top: 14.3vw;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+}
+
+
+@keyframes TitleRight {
+    from {
+        background-position: 2237px 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes TitleRight-01 {
+    from {
+        background-position: 1233px 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+
+
+.bg_cover {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
