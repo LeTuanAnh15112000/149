@@ -100,7 +100,7 @@ ScrollTrigger.create({
   start: `${itemHeight}px 50%`,
   end: `3161px 50%`,
   scrub: 1,
-  // markers: true,
+  // markers: true,tuan anh chu nhat 2/18/2024
 
 });
 
