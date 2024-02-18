@@ -46,9 +46,9 @@ function mvheight() {
   );
 }
 
-$(window).on("scroll load resize", function () {
-  servicescroll();
-});
+// $(window).on("scroll load resize", function () {
+//   servicescroll();
+// });
 
 // function servicescroll() {
 //   var scr = $(window).scrollTop();
@@ -68,21 +68,7 @@ $(window).on("scroll load resize", function () {
 //   }
 // }
 
-const getCateList = document.querySelector(".collection_cate_list");
-const getCateImg = document.querySelector(".collection_cate_img");
-const heightCateList = getCateList.clientHeight;
-const heightCateImg = getCateImg.clientHeight;
-const resultEndPin = heightCateList - heightCateImg;
 
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.create({
-  trigger: ".collection_cate_img",
-  pin: true,
-  start: "top 50px",
-  end: `${resultEndPin}px 0px`,
-  scrub: 1,
-  markers: true,
-});
 
 
 
@@ -101,3 +87,39 @@ $(".collection_cate_item a").hover(
     resultImg[0].classList.add("show");
   }
 );
+
+
+const startElement = document.querySelector(".service_frame");
+// const heightElement = document.querySelector(".service_customer_list");
+const itemHeight = startElement.clientHeight / 2;
+// const endElement = heightElement.clientHeight - (startElement.clientHeight / 2);
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.create({
+  trigger: ".service_frame",
+  pin: true,
+  start: `${itemHeight}px 50%`,
+  end: `3161px 50%`,
+  scrub: 1,
+  // markers: true,
+
+});
+
+
+ScrollTrigger.matchMedia({
+  "(min-width: 769px)": function () {
+    const getCateList = document.querySelector(".collection_cate_list");
+    const getCateImg = document.querySelector(".collection_cate_img figure");
+    
+    const heightCateList = getCateList.clientHeight;
+    const heightCateImg = getCateImg.clientHeight;
+    const resultEndPin = heightCateList - heightCateImg;
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: ".collection_cate_img",
+      pin: true,
+      start: "top 50px",
+      end: `${resultEndPin} 50px`,
+      scrub: 1,
+    });
+  },
+});

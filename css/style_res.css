@@ -8,10 +8,26 @@
 
 /* responsive */
 @media screen and (max-width: 1500px) {
+
+    /*-- idx_collection --*/
+    #idx_collection .collection_cate_title {
+        font-size: 3.6vw;
+    }
+
+    #idx_collection .collection_cate_title span {
+        margin-left: 1.4vw;
+    }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1499px) {
+
+    /*-- idx_collection --*/
+    #idx_collection .collection_cate_list {
+        margin-left: 80px;
+    }
 }
+
+@media screen and (max-width: 1150px) {}
 
 @media screen and (min-width: 1025px) {
     a[href^="tel"] {
@@ -67,9 +83,30 @@
     }
 
     /*-- btn_primary --*/
+    .btn_primary {
+        max-width: 200px;
+    }
+    
     .btn_primary a {
         font-size: 14px;
         line-height: 3;
+    }
+
+    /*-- header --*/
+    #header .menu {
+        display: none;
+    }
+
+    #header #toggle-menu {
+        top: 10px;
+        right: 3%;
+        width: 45px;
+        height: 45px;
+    }
+
+    /*-- idx_mainvisual --*/
+    #idx_mainvisual .mainvisual_title {
+        max-width: 220px;
     }
 
     /*-- idx_about --*/
@@ -154,12 +191,158 @@
     #box_content .box_desc {
         margin-bottom: 40px;
     }
+
+    /*-- idx_collection --*/
+    #idx_collection {
+        padding: 45px 5% 55px;
+    }
+
+    #idx_collection .collection_wrap {
+        margin-bottom: 55px;
+    }
+
+    #idx_collection .collection_desc {
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    #idx_collection .collection_cate_list {
+        margin-left: 30px;
+    }
+
+    #idx_collection .collection_cate_item a {
+        padding: 30px 0;
+    }
+
+    #idx_collection .collection_cate_title {
+        margin-bottom: 10px;
+    }
+
+    #idx_collection .collection_cate_title span {
+        font-size: 14px;
+    }
+
+    #idx_collection .collection_cate_desc {
+        font-size: 14px;
+    }
+
+    /*-- box_content --*/
+    #footer {
+        padding-top: 55px;
+    }
+
+    #footer .box_contact_wrap {
+        padding: 40px 3% 50px;
+    }
+
+    #footer .box_contact_desc {
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 2;
+    }
+
+    #footer .box_contact_tel {
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+
+    #footer .box_contact_time {
+        margin-bottom: 30px;
+    }
+
+    #footer .box_instagram {
+        padding: 40px 0 55px;
+    }
+
+    #footer .box_instagram .h_title {
+        margin-bottom: 45px;
+    }
+
+    #footer .box_instagram_group {
+        margin-bottom: 50px;
+    }
+
+
+    #footer .box_instagram_ttl {
+        font-size: 22px;
+        margin-left: 3%;
+    }
+
+    #footer .box_instagram_ttl span {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    #footer .box_instagram_animation {
+        height: 23px;
+    }
+
+    #footer .box_instagram_animation::before {
+        background-size: 412px 100%;
+        animation-name: instagramRight_sp;
+    }
+
+    #footer .box_instagram_animation.reverse {
+        height: 24px;
+    }
+
+    #footer .box_instagram_animation.reverse::before {
+        background-size: 410px 100%;
+        animation-name: instagramLeft_sp;
+    }
+
+
+    #footer .box_info {
+        padding: 55px 0 20px;
+    }
+
+    #footer .box_info_nav {
+        display: none;
+    }
+
+    #footer .box_info_detail {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #footer .box_info_block .f_logo {
+        margin-bottom: 35px;
+    }
+
+    #footer .box_info_block .f_logo a {
+        max-width: 320px;
+    }
+
+    #footer .box_info_block .f_info p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    #footer .box_info_block {
+        margin-bottom: 35px;
+    }
+
+    #footer .box_info_inistagram {
+        margin-bottom: 35px;
+    }
+
+    #footer .box_info_inistagram a img {
+        margin-right: 10px;
+        width: 18px;
+    }
+
+    #footer .box_info_inistagram a {
+        font-size: 18px;
+    }
+
+
 }
 
-@media screen and (max-width: 992px) {
-}
+@media screen and (max-width: 992px) {}
 
 @media screen and (max-width: 768px) {
+
     #wrapper,
     #header,
     #main,
@@ -250,9 +433,76 @@
     #box_content .box_detail .btn_primary {
         margin: 0 auto;
     }
+
+    /*-- idx_collection --*/
+    #idx_collection {
+        padding: 45px 3% 55px;
+    }
+
+    #idx_collection .collection_content {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    #idx_collection .collection_content .h_title {
+        text-align: center;
+    }
+
+    #idx_collection .collection_wrap .btn_primary {
+        margin: 0 auto;
+    }
+
+    #idx_collection .collection_wrap {
+        flex-direction: column;
+    }
+
+    #idx_collection .collection_cate_img {
+        display: none;
+    }
+
+    #idx_collection .collection_cate_list {
+        margin-left: 0;
+    }
+
+    #idx_collection .collection_cate_item a {
+        opacity: 1;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #idx_collection .collection_cate_thumbnail {
+        width: 42vw;
+        max-width: 120px;
+        margin-right: 3%;
+        margin-top: 8px;
+    }
+
+    #idx_collection .collection_cate_title {
+        font-size: 20px;
+    }
+
+    #idx_collection .collection_cate_title span {
+        margin-left: 0;
+        display: block;
+    }
+
+    /*-- footer --*/
+    #footer .box_instagram_item {
+        width: calc(100% / 3);
+    }
+
+    #footer .box_info_inistagram {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer .box_info_inistagram a:first-child {
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 576px) {
+
     /*-- idx_about --*/
     #idx_about .about_content {
         padding-top: 26.042vw;
@@ -272,10 +522,13 @@
 }
 
 @media screen and (max-width: 490px) {
+
+    /*-- footer --*/
+    #footer .box_instagram_item {
+        width: calc(100% / 2);
+    }
 }
 
-@media screen and (max-width: 390px) {
-}
+@media screen and (max-width: 390px) {}
 
-@media screen and (max-width: 320px) {
-}
+@media screen and (max-width: 320px) {}

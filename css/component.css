@@ -53,68 +53,51 @@
   z-index: 10;
 }
 #header #toggle-menu {
+  position: fixed;
+  top: 29px;
+  right: 60px;
   width: 56px;
   height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 28px;
-  right: 60px;
-  z-index: 12;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  margin-bottom: 6px;
   cursor: pointer;
-  pointer-events: auto;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
-#header #toggle-menu .hamburger {
-  width: 100%;
-  height: 14px;
-  position: relative;
-}
-#header #toggle-menu .hamburger .bar {
+#header #toggle-menu span {
   display: block;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
   height: 1px;
   background: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s linear;
 }
-#header #toggle-menu .hamburger .bar1 {
-  top: 0;
+#header #toggle-menu span:nth-child(1) {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-#header #toggle-menu .hamburger .bar2,
-#header #toggle-menu .hamburger .bar3 {
-  top: 7px;
+#header #toggle-menu span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-#header #toggle-menu .hamburger .bar3 {
-  right: 0;
+#header #toggle-menu span:nth-child(3) {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-#header #toggle-menu .hamburger .bar4 {
-  bottom: 0;
+#header #toggle-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-#header #toggle-menu .hamburger.active .bar {
-  left: 62%;
+#header #toggle-menu.active span:nth-child(2) {
+  opacity: 0;
 }
-#header #toggle-menu .hamburger.active .bar1 {
-  transform: translateX(-50%) rotate(45deg);
-  transform-origin: 2%;
-  width: 30px;
-}
-#header #toggle-menu .hamburger.active .bar2 {
-  transform: translateX(-40px);
-  background-color: transparent;
-}
-#header #toggle-menu .hamburger.active .bar3 {
-  transform: translateX(40px);
-  background-color: transparent;
-}
-#header #toggle-menu .hamburger.active .bar4 {
-  transform: translateX(-50%) rotate(-45deg);
-  transform-origin: 4%;
-  width: 30px;
+#header #toggle-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 #header .menu {
   position: absolute;
@@ -470,23 +453,13 @@
   text-align: right;
 }
 #idx_service .service_frame {
-  position: absolute;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 0 1.5vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #idx_service .service_frame .h_title {
   margin-bottom: 36px;
-}
-#idx_service .service_frame.s_frame_fixed {
-  position: fixed;
-  top: 80px;
-}
-#idx_service .service_frame.bottom {
-  top: auto;
-  bottom: 0;
 }
 #idx_service .service_ttl {
   font-size: 30px;
@@ -623,6 +596,11 @@
 #idx_collection .collection_wrap .btn_primary {
   margin-bottom: 9px;
 }
+#idx_collection .collection_content {
+  width: 100%;
+  margin-right: 30px;
+  flex: 1;
+}
 #idx_collection .collection_content .h_title {
   margin-bottom: 20px;
 }
@@ -641,8 +619,8 @@
 }
 #idx_collection .collection_cate_img {
   width: 35.55%;
+  flex-shrink: 0;
   height: 100vh;
-  margin-right: 120px;
   position: relative;
 }
 #idx_collection .collection_cate_img figure {
@@ -663,7 +641,8 @@
   object-fit: cover;
 }
 #idx_collection .collection_cate_list {
-  width: 55.55%;
+  flex: 1;
+  margin-left: 120px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 #idx_collection .collection_cate_item a {
@@ -701,7 +680,7 @@
 #footer .box_contact_wrap {
   background: url("../images/footer/background_contact.jpg") no-repeat center center;
   background-size: cover;
-  padding: 64px 0 79px;
+  padding: 64px 3% 79px;
   color: #fff;
   position: relative;
 }
@@ -742,7 +721,7 @@
 }
 #footer .box_contact_tel a {
   color: #fff;
-  font-size: 54px;
+  font-size: 158.8235%;
   letter-spacing: 0.1em;
 }
 #footer .box_contact_time {
@@ -790,6 +769,7 @@
 }
 #footer .box_instagram_list {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 #footer .box_instagram_item {
@@ -810,8 +790,13 @@
   position: relative;
   pointer-events: none;
 }
+#footer .box_instagram_animation.reverse {
+  height: 33px;
+}
 #footer .box_instagram_animation.reverse::before {
   animation-name: instagramLeft;
+  background-size: 571px 100%;
+  background-image: url("../images/footer/instagram_animation02.png");
 }
 #footer .box_instagram_animation::before {
   content: "";
@@ -820,7 +805,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/footer/instagram_animation.png") repeat-x;
+  background-image: url("../images/footer/instagram_animation.png");
+  background-repeat: repeat-x;
   background-size: 573px 100%;
   transition: all 1s linear;
   animation: instagramRight 8s linear infinite;
@@ -924,6 +910,7 @@
 }
 #footer .box_info_inistagram a img {
   margin-right: 16px;
+  margin-top: 4px;
 }
 #footer .box_info_inistagram a span {
   text-decoration: underline;
@@ -942,15 +929,23 @@
     background-position: 0 0;
   }
   to {
-    background-position: 573px 0;
+    background-position: 571px 0;
   }
 }
-@keyframes TitleRight-sp {
+@keyframes instagramRight_sp {
   from {
-    background-position: 1233px 0;
+    background-position: 412px 0;
   }
   to {
     background-position: 0 0;
+  }
+}
+@keyframes instagramLeft_sp {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 410px 0;
   }
 }
 
