@@ -1,7 +1,6 @@
 // anchor in page
 $(window).bind("load", function () {
   "use strict";
-  scrolleffect();
   $(function () {
     $('a[href^="#"]').click(function () {
       if ($($(this).attr("href")).length) {
@@ -51,26 +50,10 @@ $(window).bind("load", function () {
   }
 });
 
-//totop
 $(document).ready(function () {
   "use strict";
-  $("#toTop").hide();
-  $("#toTop a").click(function () {
-    $("body,html").animate(
-      {
-        scrollTop: 0,
-      },
-      800
-    );
-  });
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 500) {
-      $("#toTop").fadeIn();
-    } else {
-      $("#toTop").fadeOut();
-    }
-  });
-
+  scrolleffect();
+  // menu
   $("#toggle-menu").click(function (e) {
     e.preventDefault();
     $(this).toggleClass("active");

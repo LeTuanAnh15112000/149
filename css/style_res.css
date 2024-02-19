@@ -8,6 +8,71 @@
 
 /* responsive */
 @media screen and (max-width: 1500px) {
+    /*-- idx_service --*/
+    #idx_service .service_image01 {
+        margin-left: 1.133vw;
+    }
+
+    #idx_service .service_image01 img {
+        width: 24.667vw;
+    }
+
+    #idx_service .service_image02 {
+        margin: -9.267vw -5.2vw 0 0;
+    }
+
+    #idx_service .service_image02 img {
+        width: 30.667vw;
+    }
+
+    #idx_service .service_image03 {
+        margin: -16.467vw 0 0 6.733vw;
+    }
+
+    #idx_service .service_image03 img {
+        width: 21.667vw;
+    }
+
+    #idx_service .service_image04 {
+        margin: -2.867vw 12.533vw 0px 0;
+    }
+
+    #idx_service .service_image04 img {
+        width: 21.2vw;
+    }
+
+    #idx_service .service_image05 {
+        margin: -8.867vw 0 0 -15.067vw;
+    }
+
+    #idx_service .service_image05 img {
+        width: 38.4vw;
+    }
+
+    #idx_service .service_image06 {
+        margin: -10.733vw 1.6vw 0 0px;
+    }
+
+    #idx_service .service_image06 img {
+        width: 17.333vw;
+    }
+
+    #idx_service .service_image07 {
+        margin: -4.6vw 0 0 8.467vw;
+    }
+
+    #idx_service .service_image07 img {
+        width: 27vw;
+    }
+
+    #idx_service .service_image08 {
+        margin: -20.4vw 3.067vw 0 0;
+    }
+
+    #idx_service .service_image08 img {
+        width: 41.867vw;
+    }
+
 
     /*-- idx_collection --*/
     #idx_collection .collection_cate_title {
@@ -20,14 +85,14 @@
 }
 
 @media screen and (max-width: 1499px) {
-
     /*-- idx_collection --*/
     #idx_collection .collection_cate_list {
         margin-left: 80px;
     }
 }
 
-@media screen and (max-width: 1150px) {}
+@media screen and (max-width: 1150px) {
+}
 
 @media screen and (min-width: 1025px) {
     a[href^="tel"] {
@@ -61,8 +126,13 @@
     }
 
     /*-- box_content --*/
-    #box_content .box_image a:hover img {
+    .box_content .box_image a:hover img {
         transform: scale(1.1);
+    }
+
+    /*-- idx_collection --*/
+    #idx_collection .collection_cate_item a:hover {
+        opacity: 1;
     }
 
     /*-- footer --*/
@@ -86,7 +156,7 @@
     .btn_primary {
         max-width: 200px;
     }
-    
+
     .btn_primary a {
         font-size: 14px;
         line-height: 3;
@@ -135,7 +205,7 @@
 
     /*-- idx_news --*/
     #idx_news {
-        padding: 60px 0;
+        padding: 45px 0 55px;
     }
 
     #idx_news .h_title {
@@ -143,7 +213,7 @@
     }
 
     #idx_news .news_wrap {
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
     #idx_news .news_thumbnail {
@@ -171,24 +241,43 @@
         margin-bottom: 8px;
     }
 
-    /*-- box_content --*/
-    #box_content {
-        padding: 60px 0;
+    /*-- idx_service --*/
+    #idx_service {
+        padding-bottom: 55px;
     }
 
-    #box_content .box_detail {
-        padding-bottom: 0;
-    }
-
-    #box_content .box_desc {
-        font-size: 14px;
-    }
-
-    #box_content .box_detail .h_title {
+    #idx_service .service_frame .h_title {
         margin-bottom: 20px;
     }
 
-    #box_content .box_desc {
+    #idx_service .service_ttl {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    #idx_service .service_desc {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    /*-- box_content --*/
+    .box_content {
+        padding: 55px 0;
+    }
+
+    .box_content .box_detail {
+        padding-bottom: 0;
+    }
+
+    .box_content .box_desc {
+        font-size: 14px;
+    }
+
+    .box_content .box_detail .h_title {
+        margin-bottom: 20px;
+    }
+
+    .box_content .box_desc {
         margin-bottom: 40px;
     }
 
@@ -251,7 +340,7 @@
     }
 
     #footer .box_instagram {
-        padding: 40px 0 55px;
+        padding: 45px 0 55px;
     }
 
     #footer .box_instagram .h_title {
@@ -261,7 +350,6 @@
     #footer .box_instagram_group {
         margin-bottom: 50px;
     }
-
 
     #footer .box_instagram_ttl {
         font-size: 22px;
@@ -291,7 +379,6 @@
         background-size: 410px 100%;
         animation-name: instagramLeft_sp;
     }
-
 
     #footer .box_info {
         padding: 55px 0 20px;
@@ -323,26 +410,24 @@
         margin-bottom: 35px;
     }
 
-    #footer .box_info_inistagram {
+    #footer .box_info_instagram {
         margin-bottom: 35px;
     }
 
-    #footer .box_info_inistagram a img {
+    #footer .box_info_instagram a img {
         margin-right: 10px;
         width: 18px;
     }
 
-    #footer .box_info_inistagram a {
+    #footer .box_info_instagram a {
         font-size: 18px;
     }
-
-
 }
 
-@media screen and (max-width: 992px) {}
+@media screen and (max-width: 992px) {
+}
 
 @media screen and (max-width: 768px) {
-
     #wrapper,
     #header,
     #main,
@@ -388,6 +473,7 @@
         max-width: 540px;
     }
 
+    /*-- idx_news --*/
     #idx_news .news_wrap {
         flex-direction: column;
     }
@@ -410,11 +496,27 @@
         height: 27.181vw;
     }
 
-    #box_content .box_wrap {
+    /*-- idx_service --*/
+    #idx_service {
+        padding: 40px 0 55px;
+    }
+
+    #idx_service .service_frame {
+        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #idx_service .service_gallery {
+        padding-top: 0;
+    }
+
+    /*-- box_content --*/
+    .box_content .box_wrap {
         flex-direction: column !important;
     }
 
-    #box_content .box_image {
+    .box_content .box_image {
         width: 93.933vw;
         max-width: 480px;
         height: 62.231vw;
@@ -422,15 +524,15 @@
         margin: 0 0 35px !important;
     }
 
-    #box_content .box_detail {
+    .box_content .box_detail {
         max-width: 100%;
     }
 
-    #box_content .box_detail .h_title {
+    .box_content .box_detail .h_title {
         text-align: center;
     }
 
-    #box_content .box_detail .btn_primary {
+    .box_content .box_detail .btn_primary {
         margin: 0 auto;
     }
 
@@ -491,18 +593,17 @@
         width: calc(100% / 3);
     }
 
-    #footer .box_info_inistagram {
+    #footer .box_info_instagram {
         flex-direction: column;
         align-items: center;
     }
 
-    #footer .box_info_inistagram a:first-child {
+    #footer .box_info_instagram a:first-child {
         margin-bottom: 10px;
     }
 }
 
 @media screen and (max-width: 576px) {
-
     /*-- idx_about --*/
     #idx_about .about_content {
         padding-top: 26.042vw;
@@ -522,13 +623,14 @@
 }
 
 @media screen and (max-width: 490px) {
-
     /*-- footer --*/
     #footer .box_instagram_item {
         width: calc(100% / 2);
     }
 }
 
-@media screen and (max-width: 390px) {}
+@media screen and (max-width: 390px) {
+}
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+}

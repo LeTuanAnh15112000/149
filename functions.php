@@ -27,34 +27,32 @@ function custom_title_separator($sep)
 }
 add_filter('document_title_separator', 'custom_title_separator');
 
+add_filter( 'show_admin_bar', '__return_false' );
 
-function pluscloud_scripts()
-{
-
-	//google font読み込み方法（ex:notosans）
-	// wp_enqueue_style('notosansjp', 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
-
-	//　CSS、JSの読み込み方法
-	// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-	//wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-
-	// WordPress本体のjquery.jsを読み込まない
-	wp_deregister_script('jquery');
-	//　jQueryの読み込み（ここではver3.4,1をCDNで読み込んでいる）
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '1', true);
-	wp_enqueue_script('jquery-easing', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js', array(), '1', true);
-
-	//　自分が使用しているjsファイルを指定
-	// wp_enqueue_script( 'commonjs', get_theme_file_uri( '/js/common.js' ), array(), '1', true );
-
-	wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
-	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
-
-	//IE8以前での表示のためのもの
-	wp_enqueue_script('html5', get_theme_file_uri('/js/html5.js'), array());
-	wp_script_add_data('html5', 'conditional', 'lt IE 9');
-}
-add_action('wp_enqueue_scripts', 'pluscloud_scripts');
+function pluscloud_scripts() {
+	// ========== CSS ==========
+	wp_enqueue_style( 'styles', get_theme_file_uri( '/css/style.css' ) );
+	wp_enqueue_style( 'styles-res', get_theme_file_uri( '/css/style_res.css' ) );
+	wp_enqueue_style( 'page', get_theme_file_uri( '/css/page.css' ) );
+	wp_enqueue_style( 'page-res', get_theme_file_uri( '/css/page_res.css' ) );
+  
+	// ========== JAVASCRIPT ==========
+	wp_deregister_script( 'jquery' );
+	wp_enqueue_script( 'jquery-js', get_theme_file_uri( '/js/jquery.js' ) );
+	wp_enqueue_script( 'lib-js', get_theme_file_uri( '/js/lib.js' ), array(), '', 1 );
+  
+	if ( is_front_page() || is_home() ) {
+	  wp_dequeue_style( 'page' );
+	  wp_dequeue_style( 'page-res' );
+	  wp_enqueue_script( 'gsap-js', get_theme_file_uri( '/js/gsap.min.js' ), array(), '', 1 );
+	  wp_enqueue_script( 'ScrollTrigger-js', get_theme_file_uri( '/js/ScrollTrigger.min.js' ), array(), '', 1 );
+	  wp_enqueue_style( 'swiper', get_theme_file_uri( '/css/swiper-bundle.min.css' ) );
+	  wp_enqueue_script( 'swiper-js', get_theme_file_uri( '/js/swiper.min.js' ), array(), '', 1 );
+	  wp_enqueue_script( 'top-js', get_theme_file_uri( '/js/top.js' ), array(), '', 1 );
+	}
+	wp_enqueue_script( 'common-js', get_theme_file_uri( '/js/common.js' ), array(), '', 1 );
+  }
+  add_action( 'wp_enqueue_scripts', 'pluscloud_scripts' );
 
 
 
@@ -337,44 +335,49 @@ function slug_redirect_author_archive()
 add_action('template_redirect', 'slug_redirect_author_archive');
 
 
-/* カスタム投稿
+/* カスタム投稿 */
 add_action( 'init', 'create_post_type' );
+
 function create_post_type() {
 
-	register_post_type( 'aboutus', array(
-		'label' => 'お客様の声',
-		'labels' => array(
-			'all_items' => '一覧',
-			'add_new_item' => '追加',//「新規投稿」の代わりに表示させる、ダッシュボードのボタン下の言葉
-			'add_new' => '追加',//「新規投稿を追加」の代わりに表示させる、新規投稿画面の左上に表示される言葉
-			'view_item' => 'ページを確認',//「投稿を表示」の代わりに表示される、記事編集画面の上に表示されるボタンの言葉
-			'search_items' => 'トピックスを検索',//「投稿を検索」の代わりに表示させる、記事一覧画面の右上検索BOX横に表示されるボタンの言葉
-		),
-		'public' => true,//publicly_queriable, show_ui, show_in_nav_menus, exclude_from_search の値をまとめてtrueに
-		'exclude_from_search' => false, //検索結果からこの投稿タイプを除外しない
-		'hierarchical' => false,//投稿っぽく記事を積み上げていくならfalse, ページっぽく階層を認めるならtrue
-		'supports' => array(  //このカスタム投稿の編集ページで表示させる項目
-			//title/タイトル　editor/本文　author/作成者　thumbnail/アイキャッチ画像　excerpt/抜粋　comments/コメント
-			//trackbacks/トラックバック　custom-fields/カスタムフィールド　revisions/リビジョン　page-attributes/属性
-			'title', 'editor', 'thumbnail',
-		),
-		'menu_position' => 5, //このカスタム投稿のボタンをダッシュボード上からの何番目に表示させるか。
-		'has_archive' => true,//アーカイブページを生成するかどうか。 true またはスラッグを指定で生成
-		'rewrite' => true //このフォーマットでパーマリンクをリライト。trueならカスタム投稿タイプのスラッグを使う。'hoge'と指定すると、パーマリンクはhogeが使われる
-		)
-	);
-	register_taxonomy(
-		'aboutus_cat', // 分類名
-		'aboutus',  // 投稿タイプ名
-		array(
-			//'label' => '', // フロントで表示する分類名
-			'hierarchical' => true,   // 階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
-			'query_var' => true,
-			'rewrite' => true
-		)
-	);
+  register_post_type( 'news', array(
+    'label' => 'お知らせ',
+    'labels' => array(
+      'all_items' => '一覧',
+      'add_new_item' => '追加', //「新規投稿」の代わりに表示させる、ダッシュボードのボタン下の言葉
+      'add_new' => '追加', //「新規投稿を追加」の代わりに表示させる、新規投稿画面の左上に表示される言葉
+      'view_item' => 'ページを確認', //「投稿を表示」の代わりに表示される、記事編集画面の上に表示されるボタンの言葉
+      'search_items' => 'トピックスを検索', //「投稿を検索」の代わりに表示させる、記事一覧画面の右上検索BOX横に表示されるボタンの言葉
+    ),
+    'public' => true, //publicly_queriable, show_ui, show_in_nav_menus, exclude_from_search の値をまとめてtrueに
+    'exclude_from_search' => false, //検索結果からこの投稿タイプを除外しない
+    'hierarchical' => false, //投稿っぽく記事を積み上げていくならfalse, ページっぽく階層を認めるならtrue
+    'show_in_rest' => true,
+    'supports' => array( //このカスタム投稿の編集ページで表示させる項目
+      //title/タイトル　editor/本文　author/作成者　thumbnail/アイキャッチ画像　excerpt/抜粋　comments/コメント
+      //trackbacks/トラックバック　custom-fields/カスタムフィールド　revisions/リビジョン　page-attributes/属性
+      'title', 'editor', 'author', 'thumbnail', 'revisions'
+    ),
+    'menu_position' => null, //このカスタム投稿のボタンをダッシュボード上からの何番目に表示させるか。
+    'has_archive' => true, //アーカイブページを生成するかどうか。 true またはスラッグを指定で生成
+    'rewrite' => true //このフォーマットでパーマリンクをリライト。trueならカスタム投稿タイプのスラッグを使う。'hoge'と指定すると、パーマリンクはhogeが使われる
+  ) );
+  register_taxonomy(
+    'news-cat', // 分類名
+    'news', // 投稿タイプ名
+    array(
+      //'label' => '', // フロントで表示する分類名
+      'show_admin_column' => true,
+      'show_in_rest' => true,
+      'hierarchical' => true, // 階層構造か否か（trueの場合はカテゴリー、falseの場合はタグ）
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'news-category', 'with_front' => false )
+    )
+  );
 
-}*/
+
+}
+
 
 
 // //カスタム投稿のページ送りを設定
