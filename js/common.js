@@ -65,7 +65,7 @@ function scrolleffect() {
   $(".js_effect").each(function () {
     var headerScene = new ScrollMagic.Scene({
       triggerElement: this,
-      offset: -200,
+      offset: -300,
       reverse: false,
     })
       .setClassToggle(this, "js_active")

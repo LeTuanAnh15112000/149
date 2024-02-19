@@ -1,15 +1,6 @@
-
-
 $(document).ready(function () {
   "use strict";
   mvheight();
-  
-  $("html, body").animate(
-    {
-      scrollTop: $("body").offset().top,
-    },
-    500
-  );
 
   var mySwiper = new Swiper(".mainvisual_slider", {
     autoplay: {
@@ -17,9 +8,9 @@ $(document).ready(function () {
     },
     speed: 3500,
     loop: true,
-    effect: 'fade',
+    effect: "fade",
     fadeEffect: {
-      crossFade: true
+      crossFade: true,
     },
   });
 
@@ -30,8 +21,6 @@ $(document).ready(function () {
   /*------no_link------*/
   $('a[href*="no_link"]').attr("href", "javascript:void(0);");
 });
-
-
 
 function mvheight() {
   var setVhCustomVar = function () {
@@ -63,7 +52,7 @@ $(window).on("scroll load resize", function () {
 
 function servicescroll() {
   var scr = $(window).scrollTop();
-  var parent = $('#idx_service .inner');
+  var parent = $("#idx_service .inner");
   var tgt = $("#idx_service .service_frame");
   var t_h = tgt.innerHeight();
   var p_h = parent.innerHeight();
@@ -77,57 +66,64 @@ function servicescroll() {
       tgt.removeClass("bottom").addClass("s_frame_fixed");
     }
   }
+
+  // change background
+  if ($(window).width() > 768) {
+    const screenHeight = window.innerHeight;
+    const getService = $("#idx_service");
+    const serviceTop = getService.offset().top;
+    const serviceGalleryHeight = $(".service_gallery").height();
+    const result = serviceTop + screenHeight + serviceGalleryHeight / 4;
+
+    const scrollTop = $(window).scrollTop();
+    if (scrollTop > result) {
+      getService.addClass("color");
+    } else {
+      getService.removeClass("color");
+    }
+  }
 }
 
-(function(){
-  const screenHeight = window.innerHeight;
-  const getService = $('#idx_service');
-  const serviceTop = getService.offset().top;
-  const serviceGalleryHeight = $('.service_gallery').height();
-  const result = serviceTop + screenHeight + (serviceGalleryHeight / 4);
-  $(window).scroll(function() {
-    const scrollTop = $(window).scrollTop();
-    if ($(window).width() > 768) {
-      if (scrollTop > result) {
-        getService.addClass("color")
-      } else {
-        getService.removeClass("color")
-      }
+window.onload = function () {
+  var images = document.querySelectorAll(".collection_cate_img figure img");
+  var maxHeight = 0;
+  var maxImage = null;
+  images.forEach(function (image) {
+    var height = image.clientHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+      maxImage = image;
     }
   });
-})();
 
+  ScrollTrigger.matchMedia({
+    "(min-width: 1025px)": function () {
+      const getCateList = document.querySelector(".collection_cate_list");
+      const heightCateList = getCateList.clientHeight;
+      const heightCateImg = maxImage.clientHeight;
+      const resultEndPin = heightCateList - heightCateImg;
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.create({
+        trigger: ".collection_cate_img",
+        pin: true,
+        start: "top 50px",
+        end: `${resultEndPin} 50px`,
+        scrub: 1,
+      });
 
-$(".collection_cate_item a").hover(
-  function (e) {
-    var dataCateValue = $(this).data("cate");
-    const arrImage = Array.from(
-      document.querySelectorAll(".collection_cate_img figure")
-    );
-    arrImage.forEach(img => {
-      img.classList.remove("show");
-    })
-    const resultImg = arrImage.filter((img) => {
-      return img.getAttribute("data-id") == dataCateValue;
-    });
-    resultImg[0].classList.add("show");
-  }
-);
-
-ScrollTrigger.matchMedia({
-  "(min-width: 769px)": function () {
-    const getCateList = document.querySelector(".collection_cate_list");
-    const getCateImg = document.querySelector(".collection_cate_img figure");
-    const heightCateList = getCateList.clientHeight;
-    const heightCateImg = getCateImg.clientHeight;
-    const resultEndPin = heightCateList - heightCateImg;
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.create({
-      trigger: ".collection_cate_img",
-      pin: true,
-      start: "top 50px",
-      end: `${resultEndPin} 50px`,
-      scrub: 1,
-    });
-  },
-});
+      $(".collection_cate_item a").hover(function (e) {
+        var dataCateValue = $(this).data("cate");
+        const arrImage = Array.from(
+          document.querySelectorAll(".collection_cate_img figure")
+        );
+        arrImage.forEach((img) => {
+          img.classList.remove("show");
+        });
+        const resultImg = arrImage.filter((img) => {
+          return img.getAttribute("data-id") == dataCateValue;
+        });
+        resultImg[0].classList.add("show");
+      });
+    },
+  });
+};

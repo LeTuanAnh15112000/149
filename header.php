@@ -8,7 +8,7 @@ include( TEMPLATEPATH . '/inc/constants.php' );
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
-<title>おにぎり屋HANS</title>
+<title>株式会社ウェデュール・マリア</title>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php //メタ情報　※ACF必須
 // get_template_part('parts/temp', 'meta';
@@ -44,28 +44,24 @@ if ( is_404() ) {
 <body id="<?php echo $pageID; ?>" class="<?php echo $pageClass; ?>">
 <div id="wrapper">
 <header id="header">
-    <div id="toggle-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div id="toggle-menu"> <span></span> <span></span> <span></span> </div>
+  <div class="menu">
+    <div class="menu_block">
+      <nav>
+        <ul class="menu_list">
+          <li class="menu_item"><a href="no_link">ABOUT</a></li>
+          <li class="menu_item"><a href="no_link">SERVICE</a></li>
+          <li class="menu_item"><a href="no_link">PHOTO</a></li>
+          <li class="menu_item"><a href="no_link">HAIRMAKE</a></li>
+          <li class="menu_item"><a href="no_link">CEREMONY </a></li>
+          <li class="menu_item"><a href="no_link">COLLECTION</a></li>
+          <li class="menu_item"><a href="no_link">NEWS</a></li>
+          <li class="menu_item"><a href="no_link">CONTACT</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="menu">
-      <div class="menu_block">
-        <nav>
-          <ul class="menu_list">
-            <li class="menu_item"><a href="no_link">ABOUT</a></li>
-            <li class="menu_item"><a href="no_link">SERVICE</a></li>
-            <li class="menu_item"><a href="no_link">PHOTO</a></li>
-            <li class="menu_item"><a href="no_link">HAIRMAKE</a></li>
-            <li class="menu_item"><a href="no_link">CEREMONY </a></li>
-            <li class="menu_item"><a href="no_link">COLLECTION</a></li>
-            <li class="menu_item"><a href="no_link">NEWS</a></li>
-            <li class="menu_item"><a href="no_link">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+  </div>
+</header>
 
 <!-- main start -->
 <main id="main">
