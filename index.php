@@ -130,14 +130,14 @@ get_header();
       </div>
     </div>
     <div class="service_gallery">
-      <figure class="service_image01"><img src="<?php echo TMP_URL ?>/images/top/image_service01.jpg" width="370" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image02 img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service02.jpg" width="460" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image03"><img src="<?php echo TMP_URL ?>/images/top/image_service03.jpg" width="325" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image04 img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service04.jpg" width="318" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image05"><img src="<?php echo TMP_URL ?>/images/top/image_service05.jpg" width="576" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image06 img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service06.jpg" width="260" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image07"><img src="<?php echo TMP_URL ?>/images/top/image_service07.jpg" width="405" alt="株式会社ウェデュール・マリア"></figure>
-      <figure class="service_image08 img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service08.jpg" width="628" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image01 mv_shape"><img src="<?php echo TMP_URL ?>/images/top/image_service01.jpg" width="370" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image02 mv_shape img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service02.jpg" width="460" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image03 mv_shape"><img src="<?php echo TMP_URL ?>/images/top/image_service03.jpg" width="325" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image04 mv_shape img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service04.jpg" width="318" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image05 mv_shape"><img src="<?php echo TMP_URL ?>/images/top/image_service05.jpg" width="576" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image06 mv_shape img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service06.jpg" width="260" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image07 mv_shape"><img src="<?php echo TMP_URL ?>/images/top/image_service07.jpg" width="405" alt="株式会社ウェデュール・マリア"></figure>
+      <figure class="service_image08 mv_shape img_r"><img src="<?php echo TMP_URL ?>/images/top/image_service08.jpg" width="628" alt="株式会社ウェデュール・マリア"></figure>
     </div>
   </div>
 </section>
@@ -198,10 +198,10 @@ get_header();
     <div class="collection_cate_img">
       <div class="collection_cate_test js_effect">
         <figure class="show" data-id="1"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="ウェディングドレス"></figure>
-        <figure data-id="2"><img src="<?php echo TMP_URL ?>/images/top/image_service02.jpg" alt="カラードレス"></figure>
-        <figure data-id="3"><img src="<?php echo TMP_URL ?>/images/top/image_news02.jpg" alt="タキシード"></figure>
-        <figure data-id="4"><img src="<?php echo TMP_URL ?>/images/top/image_service03.jpg" alt="着物"></figure>
-        <figure data-id="5"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="ゲスト"></figure>
+        <figure data-id="2"><img src="<?php echo TMP_URL ?>/images/common/dummy02.jpg" alt="カラードレス"></figure>
+        <figure data-id="3"><img src="<?php echo TMP_URL ?>/images/common/dummy03.jpg" alt="タキシード"></figure>
+        <figure data-id="4"><img src="<?php echo TMP_URL ?>/images/common/dummy04.jpg" alt="着物"></figure>
+        <figure data-id="5"><img src="<?php echo TMP_URL ?>/images/common/dummy05.jpg" alt="ゲスト"></figure>
       </div>
     </div>
     <ul class="collection_cate_list js_effect">
@@ -213,28 +213,28 @@ get_header();
         </div>
         </a> </li>
       <li class="collection_cate_item"> <a href="no_link" data-cate="2">
-        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="カラードレス"></figure>
+        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/common/dummy02.jpg" alt="カラードレス"></figure>
         <div class="collection_cate_block">
           <h4 class="collection_cate_title">COLOR DRESS<span>カラードレス</span></h4>
           <p class="collection_cate_desc">説明テキストが入ります説明テキストが入ります説明テキストが入ります。</p>
         </div>
         </a> </li>
       <li class="collection_cate_item"> <a href="no_link" data-cate="3">
-        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="タキシード"></figure>
+        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/common/dummy03.jpg" alt="タキシード"></figure>
         <div class="collection_cate_block">
           <h4 class="collection_cate_title">TUXEDO<span>タキシード</span></h4>
           <p class="collection_cate_desc">説明テキストが入ります説明テキストが入ります説明テキストが入ります。</p>
         </div>
         </a> </li>
       <li class="collection_cate_item"> <a href="no_link" data-cate="4">
-        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="着物"></figure>
+        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/common/dummy04.jpg" alt="着物"></figure>
         <div class="collection_cate_block">
           <h4 class="collection_cate_title">KIMONO<span>着物</span></h4>
           <p class="collection_cate_desc">説明テキストが入ります説明テキストが入ります説明テキストが入ります。</p>
         </div>
         </a> </li>
       <li class="collection_cate_item"> <a href="no_link" data-cate="5">
-        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/top/image_collection.jpg" alt="ゲスト"></figure>
+        <figure class="collection_cate_thumbnail"><img src="<?php echo TMP_URL ?>/images/common/dummy05.jpg" alt="ゲスト"></figure>
         <div class="collection_cate_block">
           <h4 class="collection_cate_title">GUEST<span>ゲスト</span></h4>
           <p class="collection_cate_desc">説明テキストが入ります説明テキストが入ります説明テキストが入ります。</p>

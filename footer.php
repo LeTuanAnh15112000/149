@@ -2,12 +2,13 @@
 <!-- main end -->
 <footer id="footer">
   <div id="loading"></div>
+  <div id="toggle-menu"> <span></span> <span></span> <span></span> </div>
   <section class="box_contact">
     <div class="inner">
       <div class="box_contact_wrap">
         <div class="box_contact_block js_effect">
           <h3 class="h_title"><span>CONTACT</span></h3>
-          <p class="box_contact_desc">サービスや商品に関するお問い合わせやご相談など<br>
+          <p class="box_contact_desc">サービスや商品に関する<br class="box_sp">お問い合わせやご相談など<br>
             お気軽にお問い合わせください。</p>
           <p class="box_contact_tel">TEL. <a href="tel:+0552256307">055-225-6307</a></p>
           <p class="box_contact_time">お電話でのお問い合わせ：10:00～ 18:30 <br class="box_sp">
@@ -34,12 +35,12 @@
     <div class="box_instagram_group js_effect">
       <h4 class="box_instagram_ttl"><span><img src="<?php echo TMP_URL ?>/images/footer/icon_instagram.png" width="27" alt="weddiurlmaria_hairmake"></span>weddiurlmaria_hairmake</h4>
       <ul class="box_instagram_list">
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram07.jpg" alt="株式会社ウェデュール・マリア"></a></li>
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram08.jpg" alt="株式会社ウェデュール・マリア"></a></li>
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram09.jpg" alt="株式会社ウェデュール・マリア"></a></li>
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram10.jpg" alt="株式会社ウェデュール・マリア"></a></li>
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram11.jpg" alt="株式会社ウェデュール・マリア"></a></li>
-        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram12.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram06.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram05.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram04.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram03.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram02.jpg" alt="株式会社ウェデュール・マリア"></a></li>
+        <li class="box_instagram_item"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/image_instagram01.jpg" alt="株式会社ウェデュール・マリア"></a></li>
       </ul>
       <div class="box_instagram_animation reverse"></div>
     </div>
@@ -48,7 +49,7 @@
     <div class="box_info_wrap">
       <div class="box_info_block">
         <div class="box_info_detail">
-          <p class="f_logo"><a href="no_link"><img src="<?php echo TMP_URL ?>/images/footer/logo.png" alt="460"></a></p>
+          <p class="f_logo"><a href="<?php echo SITE_URL ?>"><img src="<?php echo TMP_URL ?>/images/footer/logo.png" alt="460"></a></p>
           <div class="f_info">
             <p>〒164-0003　山梨県中巨摩郡昭和町飯喰457-5</p>
             <p>TEL : <a href="tel:+0552256307">055-225-6307</a></p>
@@ -58,7 +59,7 @@
         </div>
         <div class="box_info_nav">
           <ul class="box_info_link">
-            <li><a href="no_link">ホーム</a></li>
+            <li><a href="<?php echo SITE_URL ?>">ホーム</a></li>
             <li><a href="no_link">私たちについて</a></li>
             <li><a href="no_link">サービス案内</a></li>
             <li><a href="no_link">フォトウェディング</a></li>

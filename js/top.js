@@ -127,3 +127,29 @@ window.onload = function () {
     },
   });
 };
+
+ScrollTrigger.matchMedia({
+  "(max-width: 768px)": function () {
+    let illusts = gsap.utils.toArray(".mv_shape");
+    illusts.forEach((illust) => {
+      let illusteffect = gsap.timeline({
+        scrollTrigger: {
+          trigger: illust,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 2,
+        },
+      });
+
+      illusteffect.fromTo(
+        illust,
+        {
+          y: 50,
+        },
+        {
+          y: -50,
+        }
+      );
+    });
+  },
+});

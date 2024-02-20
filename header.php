@@ -44,7 +44,6 @@ if ( is_404() ) {
 <body id="<?php echo $pageID; ?>" class="<?php echo $pageClass; ?>">
 <div id="wrapper">
 <header id="header">
-  <div id="toggle-menu"> <span></span> <span></span> <span></span> </div>
   <div class="menu">
     <div class="menu_block">
       <nav>
